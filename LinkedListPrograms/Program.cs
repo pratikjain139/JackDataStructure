@@ -25,8 +25,54 @@ namespace LinkedListPrograms
             while (currentNode != null);
             Console.ReadLine();
         }
-    }
 
+
+
+        public void addNode(EnumPosition pos, Node newNode, int? position = null)
+        {
+            Node currentNode;
+            switch (pos) 
+            {
+                case EnumPosition.start:
+                    head.previous = newNode;
+                    newNode.next = head;
+                    this.head = newNode;
+                    break;
+                case EnumPosition.end:
+                    currentNode = this.head;
+                    while (currentNode.next != null) 
+                    {
+                        currentNode = currentNode.next;
+                    }
+                    currentNode.next = newNode;
+                    break;
+                case EnumPosition.index:
+                    currentNode = this.head;
+                    int i = 1;
+                    while (currentNode.next != null) 
+                    {                        
+                        if (i == position.GetValueOrDefault()) 
+                        {
+                            newNode.next = currentNode;
+                            newNode.previous = currentNode.previous;
+                            currentNode.previous.next = newNode;
+                            currentNode.previous = newNode;
+                            break;
+                        }
+                        currentNode = currentNode.next;
+                        i++;
+                    }
+                    
+                    break;
+            }
+        }
+    }
+    public enum EnumPosition
+    {
+        start = 1,
+        end = 2,
+        index = 3
+    }
     public class Node
     {
         public int data;
@@ -37,6 +83,8 @@ namespace LinkedListPrograms
             data = d;
         }
     }
+
+
     class Program
     {
         static void Main(string[] args)
@@ -50,6 +98,12 @@ namespace LinkedListPrograms
             secondNode.next = thirdNode;
             secondNode.previous = firstNode;
             thirdNode.previous = secondNode;
+            Node fourthNode = new Node(4);
+            Node fifthNode = new Node(5);
+            Node sixthNode = new Node(6);
+            linkLst.addNode(EnumPosition.index, fourthNode, 2);
+            linkLst.addNode(EnumPosition.start, fifthNode, null);
+            linkLst.addNode(EnumPosition.end, sixthNode, null);
             linkLst.printAllNodes();
         }
     }
