@@ -89,22 +89,38 @@ namespace LinkedListPrograms
     {
         static void Main(string[] args)
         {
-            Node firstNode= new Node(1);
-            LinkedList linkLst = new LinkedList(firstNode);
-            Node secondNode = new Node(2);
-            Node thirdNode = new Node(3);
-            firstNode.next = secondNode;
+            //-----Linked list code----
+            //Node firstNode= new Node(1);
+            //LinkedList linkLst = new LinkedList(firstNode);
+            //Node secondNode = new Node(2);
+            //Node thirdNode = new Node(3);
+            //firstNode.next = secondNode;
 
-            secondNode.next = thirdNode;
-            secondNode.previous = firstNode;
-            thirdNode.previous = secondNode;
-            Node fourthNode = new Node(4);
-            Node fifthNode = new Node(5);
-            Node sixthNode = new Node(6);
-            linkLst.addNode(EnumPosition.index, fourthNode, 2);
-            linkLst.addNode(EnumPosition.start, fifthNode, null);
-            linkLst.addNode(EnumPosition.end, sixthNode, null);
-            linkLst.printAllNodes();
+            //secondNode.next = thirdNode;
+            //secondNode.previous = firstNode;
+            //thirdNode.previous = secondNode;
+            //Node fourthNode = new Node(4);
+            //Node fifthNode = new Node(5);
+            //Node sixthNode = new Node(6);
+            //linkLst.addNode(EnumPosition.index, fourthNode, 2);
+            //linkLst.addNode(EnumPosition.start, fifthNode, null);
+            //linkLst.addNode(EnumPosition.end, sixthNode, null);
+            //linkLst.printAllNodes();
+
+
+            //-----stack code --------
+            stack<int> myStack = new stack<int>();
+            myStack.push(1);
+            myStack.push(2);
+            myStack.push(3);
+            myStack.push(4);
+            myStack.push(5);
+            myStack.push(6);
+            myStack.printStack();
+            Console.WriteLine("Top is: " + myStack.peek());
+            myStack.pop();
+            myStack.printStack();
+            Console.ReadLine();
         }
     }
 }
