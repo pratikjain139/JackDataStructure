@@ -80,6 +80,63 @@ namespace LinkedListPrograms
         }
 
     }
+    
+    public class stackArray
+    {
+        public const int stacksize= 10;
+        # region properties
+        
+        private int top;
+        public int Top
+        {
+            get { return top; }
+            set { top = value; }
+        }
+        
+        #endregion     
+        public int[] data;
+
+        public stackArray()
+            : this(stacksize)
+        { 
+        }
+        public stackArray(int stacksize)
+        {
+            Top = -1;
+            data = new int[stacksize];
+        }
+
+        public void push(int item)
+        {
+            if (Top == 10)
+            {
+                Console.WriteLine("Array is full");
+                return;
+            }
+
+            data[++Top] = item;
+        }
+
+        public int pop()
+        {
+            if (Top == -1) 
+            {
+                Console.WriteLine("Array is empty");
+                throw new Exception("array is empty");
+            }
+
+            return data[Top--];
+        }
+
+        public void printStack() 
+        {
+            for (int i = 0; i <= Top ; i++) 
+            {
+                Console.WriteLine(data[i].ToString());
+            }
+        }
+
+    }
 
     
 }

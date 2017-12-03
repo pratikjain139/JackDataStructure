@@ -109,7 +109,22 @@ namespace LinkedListPrograms
 
 
             //-----stack code --------
-            stack<int> myStack = new stack<int>();
+            //stack<int> myStack = new stack<int>();
+            //myStack.push(1);
+            //myStack.push(2);
+            //myStack.push(3);
+            //myStack.push(4);
+            //myStack.push(5);
+            //myStack.push(6);
+            //myStack.printStack();
+            //Console.WriteLine("Top is: " + myStack.peek());
+            //myStack.pop();
+            //myStack.printStack();
+            //Console.ReadLine();
+
+            //---------stack array-------------
+
+            stackArray myStack = new stackArray();
             myStack.push(1);
             myStack.push(2);
             myStack.push(3);
@@ -117,8 +132,7 @@ namespace LinkedListPrograms
             myStack.push(5);
             myStack.push(6);
             myStack.printStack();
-            Console.WriteLine("Top is: " + myStack.peek());
-            myStack.pop();
+            Console.WriteLine("Item popped is " + myStack.pop().ToString());
             myStack.printStack();
             Console.ReadLine();
         }
