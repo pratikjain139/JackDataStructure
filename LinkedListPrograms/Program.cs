@@ -137,19 +137,39 @@ namespace LinkedListPrograms
             //Console.ReadLine();
 
             //---- stack using dynamic array
-            stackDynamicArray myStack = new stackDynamicArray();
-            for (int i = 1; i <= 20; i++)
+            //stackDynamicArray myStack = new stackDynamicArray();
+            //for (int i = 1; i <= 20; i++)
+            //{
+            //    myStack.push(i);
+            //}
+            //myStack.print();
+            //int length = myStack.size();
+            //for (int j = 1; j <= length; j++)
+            //{
+            //    myStack.pop();
+            //}
+            //myStack.print();
+            //Console.ReadLine();
+
+            //---- queue using array----------
+            QueueUsingArray myQueue = new QueueUsingArray();
+            for (int i = 0; i < 10; i++) 
             {
-                myStack.push(i);
+                myQueue.add(i);
             }
-            myStack.print();
-            int length = myStack.size();
-            for (int j = 1; j <= length; j++)
-            {
-                myStack.pop();
-            }
-            myStack.print();
+
+            myQueue.print();
             Console.ReadLine();
+
+            for (int i = 0; i < 5; i++)
+            {
+                myQueue.remove();
+            }
+
+            myQueue.print();
+            Console.ReadLine();
+
+
         }
     }
 }
