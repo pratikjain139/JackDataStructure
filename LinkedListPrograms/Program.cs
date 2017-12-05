@@ -124,16 +124,31 @@ namespace LinkedListPrograms
 
             //---------stack array-------------
 
-            stackArray myStack = new stackArray();
-            myStack.push(1);
-            myStack.push(2);
-            myStack.push(3);
-            myStack.push(4);
-            myStack.push(5);
-            myStack.push(6);
-            myStack.printStack();
-            Console.WriteLine("Item popped is " + myStack.pop().ToString());
-            myStack.printStack();
+            //stackArray myStack = new stackArray();
+            //myStack.push(1);
+            //myStack.push(2);
+            //myStack.push(3);
+            //myStack.push(4);
+            //myStack.push(5);
+            //myStack.push(6);
+            //myStack.printStack();
+            //Console.WriteLine("Item popped is " + myStack.pop().ToString());
+            //myStack.printStack();
+            //Console.ReadLine();
+
+            //---- stack using dynamic array
+            stackDynamicArray myStack = new stackDynamicArray();
+            for (int i = 1; i <= 20; i++)
+            {
+                myStack.push(i);
+            }
+            myStack.print();
+            int length = myStack.size();
+            for (int j = 1; j <= length; j++)
+            {
+                myStack.pop();
+            }
+            myStack.print();
             Console.ReadLine();
         }
     }
