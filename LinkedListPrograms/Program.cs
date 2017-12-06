@@ -152,22 +152,64 @@ namespace LinkedListPrograms
             //Console.ReadLine();
 
             //---- queue using array----------
-            QueueUsingArray myQueue = new QueueUsingArray();
-            for (int i = 0; i < 10; i++) 
-            {
-                myQueue.add(i);
-            }
+            //QueueUsingArray myQueue = new QueueUsingArray();
+            //for (int i = 0; i < 10; i++) 
+            //{
+            //    myQueue.add(i);
+            //}
 
-            myQueue.print();
+            //myQueue.print();
+            //Console.ReadLine();
+
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    myQueue.remove();
+            //}
+
+            //myQueue.print();
+            //Console.ReadLine();
+
+            //-----------Queue using linked list-----------
+            //QueueUsingLinkedList myQueue = new QueueUsingLinkedList();
+            //for (int i = 1; i < 10; i++)
+            //{
+            //    myQueue.push(i);
+            //}
+            //myQueue.printQueue();
+            //Console.ReadLine();
+
+            //for (int i = 1; i < 6; i++)
+            //{
+            //    myQueue.pop();
+            //}
+            //myQueue.printQueue();
+            //Console.ReadLine();
+
+            //-----------------Binary Tree----------------
+            Tree myTree = new Tree();
+            TreeNode rootNode = new TreeNode(1);
+            TreeNode secondNode = new TreeNode(2);
+            TreeNode thirdNode = new TreeNode(3);
+            TreeNode fourthNode = new TreeNode(4);
+            TreeNode fifthNode = new TreeNode(5);
+
+            rootNode.lchild = secondNode;
+            rootNode.rchild = thirdNode;
+            secondNode.lchild = fourthNode;
+            secondNode.rchild = fifthNode;
+            myTree.root = rootNode;
+
+            Console.WriteLine("In order traversal");
+            myTree.inOrderTraversal(myTree.root);
+
+            Console.WriteLine("pre order traversal");
+            myTree.preOrderTraversal(myTree.root);
+
+            Console.WriteLine("Post order traversal");
+            myTree.postOrderTraversal(myTree.root);
+
             Console.ReadLine();
 
-            for (int i = 0; i < 5; i++)
-            {
-                myQueue.remove();
-            }
-
-            myQueue.print();
-            Console.ReadLine();
 
 
         }
