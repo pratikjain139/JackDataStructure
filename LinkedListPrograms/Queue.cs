@@ -88,11 +88,13 @@ namespace LinkedListPrograms
 
     }
 
+    
     public class QueueUsingLinkedList
     {
         public QueueNode Top = null;
         public QueueNode Bottom = null;
         public int count;
+
         public class QueueNode
         {
             private int data;
@@ -110,7 +112,6 @@ namespace LinkedListPrograms
                 Data = value;
             }
         }
-
         public void push(int value)
         {
             QueueNode newNode = new QueueNode(value);
@@ -147,6 +148,95 @@ namespace LinkedListPrograms
             Bottom = tempNode.PreviousNode;
             count--;
             return tempNode;
+        }
+
+        public void printQueue()
+        {
+            if (count == 0)
+            {
+                throw new System.InvalidOperationException("Queue is emtpy");
+            }
+
+            QueueNode printNode = Top;
+            Console.WriteLine(printNode.Data);
+            while (printNode.NextNode != null)
+            {
+                printNode = printNode.NextNode;
+                Console.WriteLine(printNode.Data);
+            }
+        }
+    }
+
+
+    public class QueueUsingLinkedListGeneric<T>
+    {
+        public QueueNode Top = null;
+        public QueueNode Bottom = null;
+        public int count;
+
+        public class QueueNode
+        {
+            private T data;
+
+            public T Data
+            {
+                get { return data; }
+                set { data = value; }
+            }
+            public QueueNode NextNode;
+            public QueueNode PreviousNode;
+
+            public QueueNode(T value)
+            {
+                Data = value;
+            }
+        }
+        public void push(T value)
+        {
+            QueueNode newNode = new QueueNode(value);
+
+            if (Top == null)
+            {
+                Top = Bottom = newNode;
+                count++;
+            }
+            else if (Top == Bottom)
+            {
+                Top = newNode;
+                Bottom.PreviousNode = Top;
+                Top.NextNode = Bottom;
+                count++;
+            }
+            else
+            {
+                Top.PreviousNode = newNode;
+                newNode.NextNode = Top;
+                Top = newNode;
+                count++;
+            }
+        }
+
+        public T pop()
+        {
+            if (Bottom == null)
+            {
+                throw new System.InvalidOperationException("Queue is empty");
+            }
+            QueueNode tempNode;
+            if (count > 1)
+            {
+                Bottom.PreviousNode.NextNode = null;
+                tempNode = Bottom;
+                Bottom = tempNode.PreviousNode;
+            }
+            else
+            {
+                tempNode = Bottom;
+                Top = Bottom = null;
+            }
+            
+            count--;
+            return tempNode.Data;
         }
 
         public void printQueue()

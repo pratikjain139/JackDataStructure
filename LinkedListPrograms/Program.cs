@@ -199,16 +199,29 @@ namespace LinkedListPrograms
             secondNode.rchild = fifthNode;
             myTree.root = rootNode;
 
-            Console.WriteLine("In order traversal");
-            myTree.inOrderTraversal(myTree.root);
+            //Console.WriteLine("In order traversal");
+            //myTree.inOrderTraversal(myTree.root);
 
-            Console.WriteLine("pre order traversal");
-            myTree.preOrderTraversal(myTree.root);
+            //Console.WriteLine("pre order traversal");
+            //myTree.preOrderTraversal(myTree.root);
 
-            Console.WriteLine("Post order traversal");
-            myTree.postOrderTraversal(myTree.root);
+            //Console.WriteLine("Post order traversal");
+            //myTree.postOrderTraversal(myTree.root);
 
-            Console.ReadLine();
+
+            //---------------- Breadth first traversal using recursion-----------------------------
+            
+            //Console.WriteLine("Height: " + myTree.height(rootNode).ToString());
+            //int height = myTree.height(rootNode);
+            //for (int i = 1; i <= height; i++)
+            //{
+            //    myTree.printGivenLevel(rootNode, i);
+            //}
+
+            //--------------------Breadth first traversal using queue------------------
+            myTree.breadthFirstTraversal(myTree.root);
+
+                Console.ReadLine();
 
 
 
