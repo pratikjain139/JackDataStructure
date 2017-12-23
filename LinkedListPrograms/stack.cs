@@ -20,16 +20,18 @@ namespace LinkedListPrograms
         }
 
         public T pop()
-        {   
+        {
+            stackNode temp = null;
             if (isEmpty())
             {
                 Console.WriteLine("stack is empty");         
             }
             else
-            {         
+            {
+                temp = Top;
                 Top = Top.next;
             }
-            return Top.data;
+            return temp.data;
 
         }
 
@@ -68,18 +70,22 @@ namespace LinkedListPrograms
             {
                 Console.WriteLine("stack is empty. no data ot print");
             }
-            stackNode nextNode = Top;
-            Console.WriteLine(nextNode.data.ToString());
-                        
+            stackNode nextNode = Top;           
+            var data = nextNode.data.GetType().GetField("value").GetValue(nextNode.data);
+            Console.Write(" " + data.ToString());
+            
             while (nextNode.next != null)
             {
                 nextNode = nextNode.next;
-                Console.WriteLine(nextNode.data.ToString());
+                var data1 = nextNode.data.GetType().GetField("value").GetValue(nextNode.data);
+                Console.Write(" " + data1.ToString());
             }
+
+            Console.WriteLine("  Next");
             
         }
 
-    }
+           }
     
     public class stackArray
     {

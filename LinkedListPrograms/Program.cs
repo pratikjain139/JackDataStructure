@@ -192,11 +192,14 @@ namespace LinkedListPrograms
             TreeNode thirdNode = new TreeNode(3);
             TreeNode fourthNode = new TreeNode(4);
             TreeNode fifthNode = new TreeNode(5);
-
+            TreeNode sixthNode = new TreeNode(6);
+            TreeNode seventhNode = new TreeNode(7);
             rootNode.lchild = secondNode;
             rootNode.rchild = thirdNode;
             secondNode.lchild = fourthNode;
             secondNode.rchild = fifthNode;
+            fifthNode.lchild = sixthNode;
+            fifthNode.rchild = seventhNode;
             myTree.root = rootNode;
 
             //Console.WriteLine("In order traversal");
@@ -219,8 +222,9 @@ namespace LinkedListPrograms
             //}
 
             //--------------------Breadth first traversal using queue------------------
-            myTree.breadthFirstTraversal(myTree.root);
-
+            //myTree.breadthFirstTraversal(myTree.root);
+           // myTree.depthFirstTreeTraversal(myTree.root);
+            myTree.initPrintAllPaths(rootNode);
                 Console.ReadLine();
 
 
